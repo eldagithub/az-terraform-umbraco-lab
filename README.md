@@ -20,7 +20,9 @@ The infrastructure is composed of the following elements:
   - Calls to MSSQL DB are restricted to SERVICE APP sources ( NSG with service tag as rule source) and managed through db private endpoint ( other options are possible such as private link)
   - Call to the blob storage are restricted but can done with private enpoint setup
   - Credentials such as db user/password have to be store in an Azure Key Vault ( Ensure that they are not committed to your version control system).
-
+  - It’s a bad practice to call web app directly from a traffic manager, the best way would be to use a Firwall/Azure Application Gatway (layer 7) for further traffic protection and fine tuning.
+ 
+  
   ### **Scalability**
   Scalability can be done in two ways :
   1. Vertical : scale up/down of service plan sku
