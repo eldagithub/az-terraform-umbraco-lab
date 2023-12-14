@@ -26,10 +26,10 @@ The infrastructure is composed of the following elements:
   1. Vertical : scale up/down of service plan sku
   2. Horizontal : scale in/out by adding other ServicePlan/WebApp instances
 
-  #### **Disater recovery**
+  ### **Disater recovery**
   Disater recovery can be handled through Azure Backup and/or Azure Site Recovery
 
-<br>
+<br><br>
 ## Modules
 
 - `app_service`: Configures the App Services and App Service Plans.
@@ -38,7 +38,7 @@ The infrastructure is composed of the following elements:
 - `sql_database`: Deploys the Azure SQL Database and configures the SQL Server.
 - `traffic_manager`: Manages the Traffic Manager Profile and its endpoints.
 
-<br>
+<br><br>
 ## Project structure
 
 ```sh
@@ -58,7 +58,7 @@ The infrastructure is composed of the following elements:
 |   +--- traffic_manager            # traffic_manager_profile
 ```
 
-<br>
+<br><br>
 ## Prerequisites
 1. Terraform State file setting (environmen/tf-vars/dev.backend.json)
 You will need an Azure storage account for terraform state remote storage
@@ -68,7 +68,7 @@ You will need an Azure sp account for Azure connection (subscription_id, client_
 
 3. Terraform correctly installed on your machine.
 
-<br>
+<br><br>
 ## Usage
   ### Adapt input files in environmen/tf-vars ( dev example in this projet)  
   Clone the repository to your machineand follow those stpes :
@@ -100,6 +100,6 @@ cd environmen/dev
 terraform destroy -var-file=../tf-vars/dev.azure.tfvars -var-file=../tf-vars/dev.tfvars -auto-approve  
 
   ```
-
+<br><br>
 ## Contributions
 Feel free to raise any remarks
