@@ -15,21 +15,21 @@ The infrastructure is composed of the following elements:
 - Azure SQL Database for relational data storage.
 - Azure Blob Storage for unstructured data storage.
 
-  #### Security
+  ### **Security**
   Endusers calls through traffic manager are restrictected to authorised CIDR in WEB APP site_config ( other options are possible such Service App environment with Vnet/subnet and NSG use )
   Calls to MSSQL DB are restricted to SERVICE APP sources ( NSG with service tag as rule source) and managed through db private endpoint ( other options are possible such as private link)
   Call to the blob storage are restricted but can done with private enpoint setup
   Credentials such as db user/password have to be store in an Azure Key Vault ( Ensure that they are not committed to your version control system).
 
-  #### Scalability
+  ### **Scalability**
   Scalability can be done in two ways :
   1. Vertical : scale up/down of service plan sku
   2. Horizontal : scale in/out by adding other ServicePlan/WebApp instances
 
-  #### Disater recovery
+  #### **Disater recovery**
   Disater recovery can be handled through Azure Backup and/or Azure Site Recovery
 
---
+<br>
 ## Modules
 
 - `app_service`: Configures the App Services and App Service Plans.
@@ -38,7 +38,7 @@ The infrastructure is composed of the following elements:
 - `sql_database`: Deploys the Azure SQL Database and configures the SQL Server.
 - `traffic_manager`: Manages the Traffic Manager Profile and its endpoints.
 
---
+<br>
 ## Project structure
 
 ```sh
@@ -58,7 +58,7 @@ The infrastructure is composed of the following elements:
 |   +--- traffic_manager            # traffic_manager_profile
 ```
 
---
+<br>
 ## Prerequisites
 1. Terraform State file setting (environmen/tf-vars/dev.backend.json)
 You will need an Azure storage account for terraform state remote storage
@@ -68,7 +68,7 @@ You will need an Azure sp account for Azure connection (subscription_id, client_
 
 3. Terraform correctly installed on your machine.
 
---
+<br>
 ## Usage
   ### Adapt input files in environmen/tf-vars ( dev example in this projet)  
   Clone the repository to your machineand follow those stpes :
