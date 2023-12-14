@@ -7,7 +7,7 @@ Umbraco application (code and sql) deployment are out of this project scope
 ## Architecture
 
 The infrastructure is composed of the following elements:
-![Umbroco Infrastrucutre in Azure](./images/ubmroco-lab.svg)
+![Umbroco Infrastrucutre in Azure](./images/ubmroco-lab.png)
 
 - Azure Traffic Manager for DNS-based traffic load balancing.
 - Azure App Services for web applications.
