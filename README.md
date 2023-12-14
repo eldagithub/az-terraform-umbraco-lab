@@ -1,4 +1,4 @@
-# Azure Web Application Infrastructure for EUMBROCO with terraform
+# Azure Web Application Infrastructure for UMBROCO with terraform
 
 This project contains Terraform modules for deploying a scalable and secure web application (umbroco) infrastructure in Azure.
 Umbraco application (code and sql) deployment are out of this project scope
