@@ -15,21 +15,20 @@ The infrastructure is composed of the following elements:
 - Azure SQL Database for relational data storage.
 - Azure Blob Storage for unstructured data storage.
 
-  ### Security
+  #### Security
   Endusers calls through traffic manager are restrictected to authorised CIDR in WEB APP site_config ( other options are possible such Service App environment with Vnet/subnet and NSG use )
   Calls to MSSQL DB are restricted to SERVICE APP sources ( NSG with service tag as rule source) and managed through db private endpoint ( other options are possible such as private link)
   Call to the blob storage are restricted but can done with private enpoint setup
   Credentials such as db user/password have to be store in an Azure Key Vault ( Ensure that they are not committed to your version control system).
 
-  ### Scalability
+  #### Scalability
   Scalability can be done in two ways :
   1. Vertical : scale up/down of service plan sku
   2. Horizontal : scale in/out by adding other ServicePlan/WebApp instances
 
-  ### Disater recovery
+  #### Disater recovery
   Disater recovery can be handled through Azure Backup and/or Azure Site Recovery
 
---
 --
 ## Modules
 
@@ -78,10 +77,10 @@ You will need an Azure sp account for Azure connection (subscription_id, client_
     3. environmen/tf-vars/dev.tfvars : adapt inputs variable according to your needs
 
 
-### Initiate your terraform remote workspace and execute your workload
-Follow the following steps :
+  ### Initiate your terraform remote workspace and execute your workload
+  Follow the following steps :
 
-```sh
+  ```sh
 cd environmen/dev
 
 terraform init -backend-config=../tf-vars/dev.backend.json  -reconfigure
@@ -90,17 +89,17 @@ terraform plan -var-file=../tf-vars/dev.azure.tfvars -var-file=../tf-vars/dev.tf
 
 terraform apply -var-file=../tf-vars/dev.azure.tfvars -var-file=../tf-vars/dev.tfvars -auto-approve  
 
-```
+  ```
 
-### Cleanup
-Follow the following steps for the clean up
+  ### Cleanup
+  Follow the following steps for the clean up
 
-```sh
+  ```sh
 cd environmen/dev
 
 terraform destroy -var-file=../tf-vars/dev.azure.tfvars -var-file=../tf-vars/dev.tfvars -auto-approve  
 
-```
+  ```
 
 ## Contributions
 Feel free to raise any remarks
