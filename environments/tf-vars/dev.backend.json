@@ -1,0 +1,7 @@
+
+{
+  "storage_account_name": "<--paste-your-storage-account-name-here-->",
+  "container_name": "<--paste-your-container-name-here-->",
+  "key": "<--paste-your-key-here-->",
+  "access_key" : "<--paste-your-access_key-here-->"
+}
