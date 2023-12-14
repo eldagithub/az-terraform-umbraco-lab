@@ -15,21 +15,22 @@ The infrastructure is composed of the following elements:
 - Azure SQL Database for relational data storage.
 - Azure Blob Storage for unstructured data storage.
 
-### Security
-Endusers calls through traffic manager are restrictected to authorised CIDR in WEB APP site_config ( other options are possible such Service App environment with Vnet/subnet and NSG use )
-Calls to MSSQL DB are restricted to SERVICE APP sources ( NSG with service tag as rule source) and managed through db private endpoint ( other options are possible such as private link)
-Call to the blob storage are restricted but can done with private enpoint setup
-Credentials such as db user/password have to be store in an Azure Key Vault ( Ensure that they are not committed to your version control system).
+  ### Security
+  Endusers calls through traffic manager are restrictected to authorised CIDR in WEB APP site_config ( other options are possible such Service App environment with Vnet/subnet and NSG use )
+  Calls to MSSQL DB are restricted to SERVICE APP sources ( NSG with service tag as rule source) and managed through db private endpoint ( other options are possible such as private link)
+  Call to the blob storage are restricted but can done with private enpoint setup
+  Credentials such as db user/password have to be store in an Azure Key Vault ( Ensure that they are not committed to your version control system).
 
-### Scalability
-Scalability can be done in two ways :
-1. Vertical : scale up/down of service plan sku
-2. Horizontal : scale in/out by adding other ServicePlan/WebApp instances
+  ### Scalability
+  Scalability can be done in two ways :
+  1. Vertical : scale up/down of service plan sku
+  2. Horizontal : scale in/out by adding other ServicePlan/WebApp instances
 
-### Disater recovery
-Disater recovery can be handled through Azure Backup and/or Azure Site Recovery
+  ### Disater recovery
+  Disater recovery can be handled through Azure Backup and/or Azure Site Recovery
 
-
+--
+--
 ## Modules
 
 - `app_service`: Configures the App Services and App Service Plans.
@@ -38,6 +39,7 @@ Disater recovery can be handled through Azure Backup and/or Azure Site Recovery
 - `sql_database`: Deploys the Azure SQL Database and configures the SQL Server.
 - `traffic_manager`: Manages the Traffic Manager Profile and its endpoints.
 
+--
 ## Project structure
 
 ```sh
@@ -57,9 +59,7 @@ Disater recovery can be handled through Azure Backup and/or Azure Site Recovery
 |   +--- traffic_manager            # traffic_manager_profile
 ```
 
-
-
-
+--
 ## Prerequisites
 1. Terraform State file setting (environmen/tf-vars/dev.backend.json)
 You will need an Azure storage account for terraform state remote storage
@@ -69,21 +69,13 @@ You will need an Azure sp account for Azure connection (subscription_id, client_
 
 3. Terraform correctly installed on your machine.
 
-
+--
 ## Usage
-
-1. Clone the repository to your machine.
-2. Navigate to the root directory.
-3. Update the `variables.tf` with your desired configurations.
-4. Initialize Terraform with `terraform init`.
-5. Apply the configuration with `terraform apply`.
-
-
-### Adapt input files in environmen/tf-vars ( dev example in this projet)
-Clone the repository to your machineand follow those stpes :
-1. environmen/tf-vars/dev.backend.json : fill with Requirements/1 information
-2. environmen/tf-vars/dev.azure.tfvars : fill with Requirements/2 information
-3. environmen/tf-vars/dev.tfvars : adapt inputs variable according to your needs
+  ### Adapt input files in environmen/tf-vars ( dev example in this projet)  
+  Clone the repository to your machineand follow those stpes :
+    1. environmen/tf-vars/dev.backend.json : fill with Requirements/1 information
+    2. environmen/tf-vars/dev.azure.tfvars : fill with Requirements/2 information
+    3. environmen/tf-vars/dev.tfvars : adapt inputs variable according to your needs
 
 
 ### Initiate your terraform remote workspace and execute your workload
