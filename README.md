@@ -9,11 +9,11 @@ Umbraco application (code and sql) deployment are out of this project scope
 The infrastructure is composed of the following elements:
 ![Umbroco Infrastrucutre in Azure](./images/ubmroco-lab.png)
 
-- Azure Traffic Manager for DNS-based traffic load balancing.
-- Azure App Services for web applications.
-- Network Security Groups (NSGs) for securing network traffic to subnet.
-- Azure SQL Database for relational data storage.
-- Azure Blob Storage for unstructured data storage.
+    - Azure Traffic Manager for DNS-based traffic load balancing.
+    - Azure App Services for web applications.
+    - Network Security Groups (NSGs) for securing network traffic to subnet.
+    - Azure SQL Database for relational data storage.
+    - Azure Blob Storage for unstructured data storage.
 
   ### **Security**
   Endusers calls through traffic manager are restrictected to authorised CIDR in WEB APP site_config ( other options are possible such Service App environment with Vnet/subnet and NSG use )
