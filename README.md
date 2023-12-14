@@ -16,10 +16,10 @@ The infrastructure is composed of the following elements:
     - Azure Blob Storage for unstructured data storage.
 
   ### **Security**
-    - Endusers calls through traffic manager are restrictected to authorised CIDR in WEB APP site_config ( other options are possible such Service App environment with Vnet/subnet and NSG use )
-    - Calls to MSSQL DB are restricted to SERVICE APP sources ( NSG with service tag as rule source) and managed through db private endpoint ( other options are possible such as private link)
-    - Call to the blob storage are restricted but can done with private enpoint setup
-    - Credentials such as db user/password have to be store in an Azure Key Vault ( Ensure that they are not committed to your version control system).
+  - Endusers calls through traffic manager are restrictected to authorised CIDR in WEB APP site_config ( other options are possible such Service App environment with Vnet/subnet and NSG use )
+  - Calls to MSSQL DB are restricted to SERVICE APP sources ( NSG with service tag as rule source) and managed through db private endpoint ( other options are possible such as private link)
+  - Call to the blob storage are restricted but can done with private enpoint setup
+  - Credentials such as db user/password have to be store in an Azure Key Vault ( Ensure that they are not committed to your version control system).
 
   ### **Scalability**
   Scalability can be done in two ways :
